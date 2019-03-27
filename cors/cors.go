@@ -5,10 +5,10 @@ import (
 	"sync"
 )
 
-//type Config struct {
-//	Database []interface{}
-//	Cache string
-//}
+type Options struct {
+	Database []interface{}
+	Cache string
+}
 
 var grDefault *goroom.Engin
 var gr_once sync.Once
