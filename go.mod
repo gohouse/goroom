@@ -5,7 +5,7 @@ go 1.12
 require (
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
-	github.com/go-sql-driver/mysql v1.4.1
+	github.com/go-sql-driver/mysql v1.4.1 // indirect
 	github.com/gohouse/converter v0.0.3 // indirect
 	github.com/gohouse/gorose v1.0.5-0.20190315111605-be6aa7a016f0
 	github.com/gomodule/redigo v2.0.0+incompatible
