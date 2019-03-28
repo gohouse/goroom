@@ -1,8 +1,7 @@
-package cors
+package goroom
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gohouse/goroom"
 	"sync"
 )
 
@@ -20,8 +19,8 @@ func GetRoutingInstance() *Routing {
 	return routing
 }
 
-func(r *Routing) Boot(args ...interface{}) func(*goroom.Engin) {
-	return func(srv *goroom.Engin) {
+func(r *Routing) Boot(args ...interface{}) func(*GoRoom) {
+	return func(srv *GoRoom) {
 		// 这一步是为了确保单例初始化
 		r = GetRoutingInstance()
 		r.Engine = gin.Default()

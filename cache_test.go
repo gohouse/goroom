@@ -1,13 +1,12 @@
-package cors
+package goroom
 
 import (
-	"github.com/gohouse/goroom"
 	"github.com/gomodule/redigo/redis"
 	"testing"
 )
 
 func TestCache(t *testing.T) {
-	gr := goroom.New().Use(GetCacheInstance().Boot("redis://localhost:6379"))
+	gr := New().Use(GetCacheInstance().Boot("redis://localhost:6379"))
 
 	cr := DefaultCache(gr).Conn
 

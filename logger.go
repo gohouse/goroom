@@ -1,7 +1,6 @@
-package cors
+package goroom
 
 import (
-	"github.com/gohouse/goroom"
 	"github.com/sirupsen/logrus"
 	"sync"
 )
@@ -20,8 +19,8 @@ func GetLoggerInstance() *Logger {
 	return logger
 }
 
-func (l *Logger) Boot(args ...interface{}) func(*goroom.Engin) {
-	return func(srv *goroom.Engin) {
+func (l *Logger) Boot(args ...interface{}) func(*GoRoom) {
+	return func(srv *GoRoom) {
 		// 初始化数据库链接
 		// 这一步是为了确保单例初始化
 		l = GetLoggerInstance()

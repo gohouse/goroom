@@ -1,4 +1,4 @@
-module github.com/gohouse/goroom
+module github.com/gohouse/goroom2
 
 go 1.12
 

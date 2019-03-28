@@ -1,7 +1,6 @@
-package cors
+package goroom
 
 import (
-	"github.com/gohouse/goroom"
 	"github.com/gomodule/redigo/redis"
 	"sync"
 )
@@ -20,12 +19,12 @@ func GetCacheInstance() *Cache {
 	return cache
 }
 
-func (c *Cache) Boot(args ...interface{}) func(*goroom.Engin) {
+func (c *Cache) Boot(args ...interface{}) func(*GoRoom) {
 	argsLength := len(args)
 	if argsLength==0 {
 		panic("cache's args need")
 	}
-	return func(srv *goroom.Engin) {
+	return func(srv *GoRoom) {
 		// 这一步是为了确保单例初始化
 		c = GetCacheInstance()
 		// redis链接参数设置

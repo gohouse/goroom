@@ -1,9 +1,6 @@
-package cors
+package goroom
 
 import (
-	//_ "github.com/go-sql-driver/mysql"
-	//_ "github.com/mattn/go-sqlite3"
-	"github.com/gohouse/goroom"
 	"github.com/gohouse/gorose"
 	"sync"
 )
@@ -22,8 +19,8 @@ func GetOrmInstance() *Orm {
 	return orm
 }
 
-func (o *Orm) Boot(args ...interface{}) func(*goroom.Engin) {
-	return func(srv *goroom.Engin) {
+func (o *Orm) Boot(args ...interface{}) func(*GoRoom) {
+	return func(srv *GoRoom) {
 		// 初始化数据库链接
 		connection, err := gorose.Open(args...)
 		if err != nil {
