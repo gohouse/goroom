@@ -13,11 +13,16 @@ GoRoom web framework 是一个完全组件化的 go web 框架,
 - 缓存: cache.go  
 
 ### goroom提供对应的默认组件介绍
-- 路由: 默认以 gin 为路由组件, 同时, 可以使用 gin 的所有中间件  
+- 路由: 默认以 `gin` 为路由组件, 同时, 可以使用 gin 的所有中间件  
 - 数据库: 默认以gorose为orm组件  
 - 模板: 默认以官方的 `html/template` 为模板组件  
-- 日志: 默认以 logrus 为日志库, 同时, 可以使用 logrus 的所有中间件   
-- 缓存: 默认以 redigo 为缓存服务  
+- 日志: 默认以 `logrus` 为日志库, 同时, 可以使用 logrus 的所有中间件   
+- 缓存: 默认以 `redigo` 为缓存服务  
+
+## 安装
+```bash
+go get github.com/gohouse/goroom
+```
 
 ## 示例
 ```go
