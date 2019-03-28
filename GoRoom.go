@@ -4,17 +4,10 @@ import (
 	"sync"
 )
 
-type IGoRoom interface {
-	Boot(args ...interface{}) func(room *GoRoom)
+type GoRoom struct {
 }
 
-type GoRoom struct {
-	Routing IGoRoom
-	Orm     IGoRoom
-	View    IGoRoom
-	Logger  IGoRoom
-	Cache   IGoRoom
-}
+type Handler func(*GoRoom)
 
 var gr *GoRoom
 var once sync.Once
@@ -27,7 +20,7 @@ func New() *GoRoom {
 }
 
 // Use : 驱动中间件
-func (e *GoRoom) Use(options ...func(*GoRoom)) *GoRoom {
+func (e *GoRoom) Use(options ...Handler) *GoRoom {
 	for _, option := range options {
 		option(e)
 	}
