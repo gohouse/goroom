@@ -12,18 +12,17 @@ type Routing struct {
 var routing *Routing
 var routing_once sync.Once
 
-func GetRoutingInstance() *Routing {
+func NewRouting() *Routing {
 	routing_once.Do(func() {
 		routing = new(Routing)
 	})
 	return routing
 }
 
-func(r *Routing) Boot(args ...interface{}) func(*GoRoom) {
+func DefaultRouting() func(*GoRoom) {
 	return func(srv *GoRoom) {
 		// 这一步是为了确保单例初始化
-		r = GetRoutingInstance()
-		r.Engine = gin.Default()
-		srv.Routing = r
+		routing = NewRouting()
+		routing.Engine = gin.Default()
 	}
 }
